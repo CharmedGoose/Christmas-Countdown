@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <img src="highqualitytree.png"/>
+    <h1>Christmas Countdown!</h1>
+    <p>Time left till Christmas:</p>
+    <p id="timer"></p>
+    <p class="sorry"> I'm sorry for your ears </p>
+    <p class="footer">
+      Made by
+      <a href="https://github.com/CharmedGoose">Goose</a>
+      with no knowledge of HTML
+    </p>
+  </body>
+
+  <!-- Thanks Adam Xu -->
+  <audio autoplay loop src="highqualityjinglebells.mp3"></audio>
+
+  <!--
+  https://github.com/pajasevi/CSSnowflakes
+  I don't know how to make snowflakes 
+  -->
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+
+    <div class="snowflake">
+      <div class="inner">❅</div>
+    </div>
+  </div>
+
+  <script>
+    // https://www.w3schools.com/howto/howto_js_countdown.asp
+    var christmas = new Date("Dec 25, 2024 00:00:00").getTime();
+
+    var x = setInterval(() => {
+      var now = new Date().getTime();
+      var distance = christmas - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML =
+        days +
+        " days " +
+        hours +
+        " hours " +
+        minutes +
+        " minutes " +
+        seconds +
+        " seconds!";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "It's Christmas!";
+      }
+    }, 1000);
+  </script>
+</html>
